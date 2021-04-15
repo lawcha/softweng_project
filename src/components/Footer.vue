@@ -3,7 +3,7 @@
     <img id="footerImg" src='../assets/logo.png' alt="Logo"/>
 
     <v-card-text class="text-center">
-      <b>Beer.io</b> is the reference to search for good beers to drinks. Community-based, feel free to leave a comment about how you've experienced a beer. Enjoy !
+      <b>Beer.io</b> is the reference to search for good beers to drink. It is community-based, so feel free to leave a comment about how you've experienced a beer. Enjoy !
     </v-card-text>
 
     <v-card-text class="text-center">
