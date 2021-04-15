@@ -5,7 +5,7 @@
     <v-main>
       <v-container fluid>
         <div id="main-content">
-          Main content
+          <drinks />
         </div>
       </v-container>
       <Footer/>
@@ -17,11 +17,13 @@
 import AppBar from './components/AppBar';
 import Filters from "@/components/Filters";
 import Footer from "@/components/Footer";
+import Drinks from "@/components/Drinks";
 
 export default {
   name: 'App',
 
   components: {
+    Drinks,
     Filters,
     AppBar,
     Footer,
