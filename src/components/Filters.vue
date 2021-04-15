@@ -15,8 +15,8 @@
       nav
       dense
     >
-      <v-list-item-group mandatory>
-        <v-list-item v-bind:key="i.key" v-for="i in sorts" link @click="applySort(i.key)">
+      <v-list-item-group>
+        <v-list-item v-bind:key="i.key" v-for="i in sorts" link @click="applySort(i.func)">
           <v-list-item-icon>
             <v-icon>{{i.icon}}</v-icon>
           </v-list-item-icon>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: 'Filters',
   computed: {
@@ -41,9 +43,9 @@ export default {
     }
   },
   methods: {
-    applySort: function (sort) {
-      console.log("Sorting data: " + sort)
-    }
+    ...mapMutations([
+      'applySort'
+    ])
   },
   data: () => ({
     sorts: [
@@ -51,7 +53,28 @@ export default {
         'key': 'alpha',
         'icon': 'mdi-sort-alphabetical-variant',
         'name': 'Sort by alphabetical',
+        'func': (a, b) => {
+          if (a.name < b.name) return -1
+          if (a.name > b.name) return 1
+          return 0
+        }
       },
+      {
+        'key': 'rating',
+        'icon': 'mdi-star',
+        'name': 'Sort by rating',
+        'func': (a, b) => {
+          let suma = 0
+          a.comments.forEach(el => (suma += el.rating))
+          let ava = suma / a.comments.length
+          let sumb = 0
+          b.comments.forEach(el => (sumb += el.rating))
+          let avb = sumb / b.comments.length
+          if (ava < avb) return 1
+          if (ava > avb) return -1
+          return 0
+        }
+      }
     ]
   })
 }

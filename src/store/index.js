@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import axios from 'axios'
+
 import drinks from "@/assets/drinks.json"
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -11,6 +12,9 @@ export default new Vuex.Store({
     typeFilter: ''
   },
   mutations: {
+    applySort: (state, sort) => {
+      state.drinks.sort(sort);
+    },
     filterType: (state, type) => {
       state.typeFilter = type;
     },
