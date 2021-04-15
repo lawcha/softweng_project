@@ -1,7 +1,7 @@
 # T-SoftwEng Project
-![](src/assets/logo_thumbnail.png)
-
 <div align="center">
+    <img src="src/assets/logo_thumbnail.png"  alt="Logo"/>
+    <br>
     <b>Beer.io</b> is the reference to search for good beers to drink. 
     It is community-based, so feel free to leave a comment about how you've experienced a beer. Enjoy !
 </div>
