@@ -6,6 +6,9 @@
 </template>
 
 <script>
+
+import {mapMutations} from "vuex";
+
 export default {
   name: 'Categories',
   data: () => ({
@@ -25,7 +28,9 @@ export default {
     ]
   }),
   methods: {
-    filterType (type) { console.log("Filtering" + type) }
+    ...mapMutations([
+      'filterType'
+    ])
   }
 }
 </script>

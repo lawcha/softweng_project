@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col md="4" v-bind:key="drink.name" v-for="drink in $store.state.drinks">
+      <v-col md="4" v-bind:key="drink.name" v-for="drink in filteredDrinks">
         <drink :drink="drink" />
       </v-col>
     </v-row>
@@ -31,6 +31,17 @@ export default {
     ...mapActions([
       'loadDrinks'
     ])
+  },
+  computed: {
+    filteredDrinks () {
+      if (this.$store.state.typeFilter !== '') {
+        const filtered = this.$store.state.drinks.filter((d) => {
+          return d.type === this.$store.state.typeFilter
+        })
+        return filtered
+      }
+      else return this.$store.state.drinks
+    }
   }
 }
 </script>

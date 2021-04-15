@@ -7,9 +7,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     drawerOn: true,
-    drinks: []
+    drinks: [],
+    typeFilter: ''
   },
   mutations: {
+    filterType: (state, type) => {
+      state.typeFilter = type;
+    },
     setDrawerOn: (state, value) => {
       state.drawerOn = value
     },
