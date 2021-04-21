@@ -10,7 +10,7 @@
     <v-card-actions>
       <div>
         <v-rating color="#FFD700" :value="rating" readonly />
-        <v-btn @click="openDialog(drink.id)">comments</v-btn>
+        <comment-dialog :comments="drink.comments"/>
       </div>
 
       <v-spacer></v-spacer>
@@ -35,7 +35,9 @@
 
 <script>
 
+import CommentDialog from "@/components/CommentDialog";
 export default {
+  components: {CommentDialog},
   props: [ 'drink' ],
   name: 'Drink',
   methods: {
