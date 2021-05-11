@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app :expand-on-hover="!this.$vuetify.breakpoint.xs" clipped v-model="drawer">
+  <v-navigation-drawer app :expand-on-hover="!this.$vuetify.breakpoint.xs" clipped v-model="drawer" stateless hide-overlay>
     <template v-slot:prepend  >
       <v-list>
         <v-list-item class="px-2">
