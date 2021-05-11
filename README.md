@@ -1,4 +1,3 @@
-# Beer.io
 <div align="center">
     <img src="src/assets/logo_thumbnail.png"  alt="Logo"/>
     <br>
