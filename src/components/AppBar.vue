@@ -7,7 +7,7 @@
     hide-on-scroll
     prominent
   >
-  <v-app-bar-nav-icon style="position: absolute" @click.stop="drawer = !drawer" v-if="this.$vuetify.breakpoint.mdAndDown">
+  <v-app-bar-nav-icon style="position: absolute" @click.stop="drawer = !drawer">
     <v-icon>mdi-filter</v-icon>
   </v-app-bar-nav-icon>
 
