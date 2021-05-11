@@ -12,6 +12,7 @@ The following constraints have been taken in account:
 - A Vue.js project
 - Run Vuex to make the interaction between components easier
 - Can be deployed with Docker
+- Is tested with integration testing (provided by **Cypress**)
 - Is based on a realistic subject (LoremIpsum-free)
 ## Project setup
 ```
@@ -34,6 +35,10 @@ npm run build
 sudo docker build -t beer-io/docker .
 # Launch the application
 sudo docker run -it -p 8080:8080 --rm --name beer.io beer-io/docker
+```
+### Run integration tests
+```
+cypress open
 ```
 
 ### Lints and fixes files
